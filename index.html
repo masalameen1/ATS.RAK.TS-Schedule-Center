@@ -1392,6 +1392,24 @@ html body #tb.tbMini{position:static!important;inset:auto!important;margin:0 0 0
 #tb .tbH .cpq{width:22px;height:22px;font-size:12px;background:rgba(127,127,127,.18)}
 #v_teachers .vban{flex-wrap:wrap;gap:10px}#tb.tbMini+.cpq{margin-inline-start:8px}
 @media(max-width:700px){html body #tb.tbMini{margin:6px auto 4px!important}}
+#t_sub td.subjC{font-weight:700;white-space:nowrap}#t_sub td.st{text-align:center;font-size:16px}
+#exRoot .bdBtn{display:inline-flex;flex-direction:column;align-items:flex-start;gap:0;padding:8px 14px;border-radius:14px;border:0;cursor:pointer;color:#fff;background:linear-gradient(135deg,#4f46e5,#6366f1);box-shadow:0 5px 0 #3730a3;font:inherit;text-align:left;margin-inline-end:8px;vertical-align:middle}
+#exRoot .bdBtn span{font-size:20px;line-height:1}#exRoot .bdBtn b{font-size:15px}#exRoot .bdBtn small{opacity:.9;font-size:12px}#exRoot .bdBtn:hover{filter:brightness(1.08)}#exRoot .bdBtn:active{transform:translateY(3px);box-shadow:0 2px 0 #3730a3}
+.bdBx{width:min(980px,100%)!important;max-height:90vh;background:#fff;color:#14213d;border-top:6px solid #6366f1}
+.bdDays{display:flex;gap:6px;flex-wrap:wrap}.bdMeta{display:flex;gap:10px;flex-wrap:wrap;font-size:12px;color:#475569}.bdBody{overflow:auto;display:grid;gap:8px;align-content:start}
+.bdDay{font-size:18px;font-weight:800}.bdMine{padding:9px 12px;border-radius:10px;font-weight:700}.bdMine.yes{background:#dcfce7;color:#14532d}.bdMine.no{background:#eef2ff;color:#3730a3}
+.bdT{width:100%;border-collapse:collapse;font-size:13px}.bdT th{background:#eef2ff;color:#312e81;text-align:left;padding:7px 9px;position:sticky;top:0}.bdT td{padding:8px 9px;border-bottom:1px solid #e2e8f0;vertical-align:top}.bdT td small{display:block;color:#64748b}
+.bdSt{display:inline-block;margin-inline-start:6px;padding:1px 8px;border-radius:999px;font-size:11px;font-weight:700;background:#e2e8f0}.bdSt.run{background:#bbf7d0;color:#14532d}.bdSt.end{background:#e5e7eb;color:#475569}.bdSt.wait{background:#fef3c7;color:#92400e}
+.bdBx .pill{display:inline-block;margin:2px 4px 2px 0;padding:3px 10px;border-radius:999px;background:#e0e7ff;color:#312e81;font-weight:700;font-size:13px}.bdBx .pill.me{background:#16a34a;color:#fff}.bdBx .pill.res{background:#f1f5f9;color:#334155;border:1px dashed #94a3b8}
+.bdSs{margin-bottom:2px}.bdRes{display:flex;flex-wrap:wrap;gap:2px}
+#etBig .etInv{margin-top:14px;padding:10px 16px;border-radius:14px;background:rgba(255,255,255,.14);display:grid;gap:2px;text-align:center}#etBig .etInv b{font-size:clamp(16px,2.2vw,26px)}#etBig .etInv small{opacity:.85;font-size:clamp(11px,1.2vw,15px)}
+#exRoot .bdGrp{display:flex;align-items:center;gap:8px;flex-wrap:wrap;flex-basis:100%;order:5}#exRoot .bdGrp .bdBtn{margin:0}
+#bdOv.pkOv{padding:5vh 5vw}#bdOv .bdBx{width:90vw!important;max-width:none!important;height:90vh!important;max-height:none!important;padding:16px 18px;gap:10px}
+#bdOv .bdBody{flex:1;min-height:0;overflow:auto}#bdOv .bdW{overflow:auto}
+.bdTools{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.bdTools .bdQ{flex:1 1 260px;min-width:0}.bdF{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700}.bdF select{padding:7px;border-radius:9px;border:1px solid #cbd5e1;font:inherit}.bdCnt{margin-inline-start:auto;font-size:12px;color:#475569;font-weight:700}
+.bdBx .pill.hit{outline:2px solid #f59e0b}.bdBx .pill small{font-weight:500;opacity:.75}
+@media(max-width:700px){#bdOv.pkOv{padding:2vh 2vw}#bdOv .bdBx{width:96vw!important;height:96vh!important;padding:10px}}
+#exRoot details.ctlD{margin:10px 0}#exRoot details.ctlD>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:14px;background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;font-weight:800;box-shadow:0 4px 0 #115e59}#exRoot details.ctlD>summary::-webkit-details-marker{display:none}#exRoot details.ctlD[open]>summary{margin-bottom:10px}
 </style>
 <script>try{var s=JSON.parse(localStorage.getItem('tt')||'{}');document.documentElement.dataset.theme=s.theme||'d'}catch(e){document.documentElement.dataset.theme='d'}</script>
 </head>
@@ -1573,6 +1591,8 @@ window.__askNotify=function(names,what){return new Promise(res=>{names=[...new S
  const bt=mk('div','nabt');bt.append(yes,no);
  bx.append(mk('div','nai','✉️'),mk('h3','','تأكيد إرسال الإشعار'),mk('p','','تم حفظ التعديلات في جدول '+(what||'')+' بنجاح.'),mk('p','','هل أنت متأكد أنك تريد إرسال إشعار إلى المعلمين المعنيين؟ لن يُرسل أي إشعار إلا بعد موافقتك.'),mk('div','nalh','سيصل الإشعار إلى ('+names.length+'):'),ul,bt);
  ov.append(bx);document.body.append(ov);no.focus()})};
+/* the same notification (same teacher, same schedule, same content) is never stored twice in a row */
+function dedupeNotes(old,al){const nk=a=>(a.sched||'')+'#'+(a.names||[]).slice().sort().join(','),sg=a=>[a.kind,(a.lines||[]).join('|')].join('#'),last={};[...old].sort((x,y)=>(x.ts||0)-(y.ts||0)).forEach(a=>{last[nk(a)]=sg(a)});return al.filter(a=>{const k=nk(a);if(last[k]===sg(a))return false;last[k]=sg(a);return true})}
 const isAuth8=()=>{if(ROLE==='student')return false;const e=((typeof TMAIL!=='undefined'&&TMAIL)||'').toLowerCase(),f=(window.__myEm||'').toLowerCase();return AUTH8.includes(e)||AUTH8.includes(f)};
 const TALLOW=['abdullah.abbas','waseem.alhausani','tamer.ahmed','ahmad.debek','naser.alashab','hatem.hamdeh','fahad.almansoori','khawla.alnaqbi','shaikha.alhamoudi','heba.alshehhi','aaesha.alnuaimi','sheikha.alkeebali','easa.ebrahimouh','alia.omran','kalthoom.alkhatri','badryya.alshehhi','sara.alboodi','omar.almansoori','mohammad.salamin','elham.alshehhi','amal.alshehhi','heba.aljabahji','ragheb.alali','karim.zohni','mona.alshehhi','saleh.abdulrazeq','huthaifa.awwad','hayat.braidy','hussein.saleh','mohammad.awaad','khaled.rababh','feda.abunawa','aysha.juma','marwa.ali','iman.nabil','abdul.parakkal','olalekan.akanni','maha.zaatout','ibrahim.elbauomy','francisco.ortiz','moath.ahmed','subhi.ashour','rami.freihat','furat.jasim','ammar.ahmed','manar.dhaher','yazan.odetalla','hany.nabil','mahmoud.yousef','nada.alshehhi','muhammed.palayi','rahul.murikkoli','anju.menon','sawsan.malaka','ibrahem.nofal','abedalla.banihani','rak.info','sts-rak-boys-mechanical','sts-rak-boys-science','sts-rak-boys-english','sts-rak-boys-engineering','sts-rak-boys-aviation','sts-rak-boys-aais','sts-rak-boys-math','sts-rak-boys-business','sts-rak-boys-ict','sts-rak-boys-pe','anjali.rajan','abdalrahman.wahdan'].map(x=>x+'@actvet.gov.ae').concat(['masalameen@gmail.com']);
 const TPW={"naser.alashab@actvet.gov.ae": "627836530bc97a55abdbdf0b45822db4a3541b2d20436ce971a9a56882a84302", "hatem.hamdeh@actvet.gov.ae": "03375811b3a14f4d4e7a21ea012ed1bb694fd371e8c89b5b1a13763e21f6a34b", "fahad.almansoori@actvet.gov.ae": "43cdffb5cb72378d335c60b31ef266bc080a3c1fa4b4ea9e81818fe8ee08a2bb", "khawla.alnaqbi@actvet.gov.ae": "2ef36bb84ef384d806d9cb7bd1de83ab593f043ff39b00fca2d480831669d474", "shaikha.alhamoudi@actvet.gov.ae": "88e1f4a73dcf223cad8232be69c37fcf6660ffbd1dbf9c9dfbfe36dc3d79c894", "heba.alshehhi@actvet.gov.ae": "16e1b98fedc52f55540f1eb9312d6bcc1d7828d84329e39c7781c76f362f8d69", "aaesha.alnuaimi@actvet.gov.ae": "afe32433fbd3b3e23a6c7906db09e262a9b6178813de0d4f1d1aeda3de88ac96", "sheikha.alkeebali@actvet.gov.ae": "8e0541f5117b68a93b45f706b5e1a3076ed98404f6c10e5b7647e8d0af514f3b", "easa.ebrahimouh@actvet.gov.ae": "9e1e0f2d6388e9a3bd5a40a079c43660edabe3ae99103e55e1eb84f4f55d6c3c", "alia.omran@actvet.gov.ae": "72f692e52e2277fa413d570ba3e293ea3afd183a8ab661036651e3799f92004f", "kalthoom.alkhatri@actvet.gov.ae": "963e8b1e50cfcbaa08821a04c3a1d0405af985d91c35b3ca7fb75bd1cd94d5f8", "badryya.alshehhi@actvet.gov.ae": "dfe46bc51952a6c29e826668b80da8939bd177168c473939b84ee8598dc86a73", "sara.alboodi@actvet.gov.ae": "4feaa2755eacb48d0a5166fe2071cf6fb5e293fb7493fd94c7a3fc598e539a46", "omar.almansoori@actvet.gov.ae": "75f3866ded77d45a25c9a1c8c8f5e44d6153f25486c0ff9b86c75c6d74ae9185", "mohammad.salamin@actvet.gov.ae": "47d50e7e60fa1871683691662343bb89b123b58ced90dbd4cb4e2e207ee805ae", "elham.alshehhi@actvet.gov.ae": "73a1bbeda9146be4f3acf0cbc90e7d0e43e7dc13854678bab4038c54e27d5c7d", "amal.alshehhi@actvet.gov.ae": "273efe314d3549204591d561978cc38d263d6a09e11ebc1aab013881153a4a41", "heba.aljabahji@actvet.gov.ae": "b1f5d9724ffa414473e21184916a909c855620e4403d1c09e34d8378a92159e5", "ragheb.alali@actvet.gov.ae": "a23a992e82060ad7e5d31c74d592a4617654214bb8c9d95a6e06c4f9c7028887", "karim.zohni@actvet.gov.ae": "189ab3623bf30e9c4b902fe439145939788f4d04a863e05cab0dbc55769a59f5", "mona.alshehhi@actvet.gov.ae": "d68e3bf24aed9c1ffa32fe74b22c8d3bb6d78704a8c15db565bd8d54445f6554", "saleh.abdulrazeq@actvet.gov.ae": "c0e1ac897813a758a1a57dc867547a2f8f74342a1d5933493a1975690d0df92e", "huthaifa.awwad@actvet.gov.ae": "cd8e37a216f10cdb0c086996e975ae1f00b854c1ea855006833161cd3fa6e524", "hayat.braidy@actvet.gov.ae": "aee4b135cf79a0da18d0aad37631ab3e31c6cd178ea5cc5d43f5fb74cdfde3c8", "hussein.saleh@actvet.gov.ae": "9f04e5e770f56a7395d189ced81fd0fa75f8945a6988c4fdb015496198855d35", "mohammad.awaad@actvet.gov.ae": "c6aa997c0c939c99f978876263c235d30524c59610bb187853fd96535fdbb6e8", "khaled.rababh@actvet.gov.ae": "e59efb47edbf97a9e13d155fd78128199af72e4410a7dff6df248d72fa1c1e8b", "feda.abunawa@actvet.gov.ae": "678c619981f7aa3ad4da06ca456a60155ab7859bc7d156c46d3e55066f7d4309", "aysha.juma@actvet.gov.ae": "a074dcd8b3331507f975d94d888a66753518546e8f07f97ce24056bdb6523d53", "marwa.ali@actvet.gov.ae": "d1d046647b1e61120633824208b7f2253602c9fdcb3ec9abb420899e50e4db7b", "iman.nabil@actvet.gov.ae": "da14899188efdd585be3e42cf26de44fbd250f0daaded6f82d4c9a55e049a4f2", "abdul.parakkal@actvet.gov.ae": "6a94e5f96effcc4d3195828a552c6c5ba51db69d269bf9e6ce43a71e581ef5fb", "olalekan.akanni@actvet.gov.ae": "b3bfbb1d33d9f57197ccd911a791f6a7c267525abc77876ada6cedd60cbe4ef8", "maha.zaatout@actvet.gov.ae": "96283431997192bc747060d7036928fb28f061b9b84fb5b1c9bdd0e997af5010", "ibrahim.elbauomy@actvet.gov.ae": "ac5e8ca7242de1c2a5410583835fccc3dba4515ab342bbe4675177fb1910851a", "francisco.ortiz@actvet.gov.ae": "588ffe28a9fe9a013f997c56c3dd92f4a7507d8eee9ef12fa6940719add30277", "moath.ahmed@actvet.gov.ae": "50b0f2909596c305ffc5a92ac45f7cd4d7f021bcef4b604f3e2be7f99f30b7cc", "subhi.ashour@actvet.gov.ae": "60f6634d61500a84b9aaef5320d03f0ca45ec72bff4fbe1d7a2f41f8b1fb28b3", "rami.freihat@actvet.gov.ae": "0b1cc80943714d91926b9f41fbc0a6d2b8b45fb9f09017f3006e8a69d93e1c59", "furat.jasim@actvet.gov.ae": "199577e5feb3fbb5fac42122a084882355f9fce557575d130253f2f958bdb272", "ammar.ahmed@actvet.gov.ae": "0d544a97d01cc373f96f7ff66e523f062adc74a7f529a2f0e4c5ee51982a533e", "manar.dhaher@actvet.gov.ae": "c88a98762ee56d34236e5379f8c012fb3ef3c91370f4987b6662234ea8c36ed8", "yazan.odetalla@actvet.gov.ae": "adb3c3d5aade32ef506108f8a1be428dc5b1729e410399d495c3ab8ff245f2fb", "hany.nabil@actvet.gov.ae": "811a8bad0fdc09df96dbf446d44106ca04114f9414a2b882d8be2c2568d37d8d", "mahmoud.yousef@actvet.gov.ae": "602d3b3615fa9d1fa262b19f730caad3c2488690f0f464e6f1488dcff9b131b2", "nada.alshehhi@actvet.gov.ae": "29ac64eb03a7214ccacfe837f407419bf8025ffd2a7839f5c1c4e60dc4952ec5", "muhammed.palayi@actvet.gov.ae": "62b84c2d3d4c78b4b7d3bd119904e1e2c83f2f51e4de1747724de59b5814fa44", "rahul.murikkoli@actvet.gov.ae": "0218165a4805d42ffef6a35391057702ecc1916ebca9a1eb5f6723065c39b549", "anju.menon@actvet.gov.ae": "13c32940696331e73928c7c2091cee0a9906360b62d3ca85bed798f55b53e33b", "sawsan.malaka@actvet.gov.ae": "64e0e0b654897890844b435fec792c51f9e728450fd3c7af7a470dafa0f0dd65", "ibrahem.nofal@actvet.gov.ae": "712f5a1af752efbf6d8f55e924c12207323fa9a196e8c59fe726162d036a973a", "abedalla.banihani@actvet.gov.ae": "6e1a9cefaa944f5d473b33f6ea45935f4c7b66f078bc1037c34168238bee7f89", "rak.info@actvet.gov.ae": "23a798b234c7b3b4d744f9d139146b52ecfb0f1571c43bd238349c8c7fb362e5", "sts-rak-boys-mechanical@actvet.gov.ae": "6a8ba84fea1ecac9efc12adbc0bb9f82cf650bfa54e9dd1f71b276460c143423", "sts-rak-boys-science@actvet.gov.ae": "659374dc885149ce7c9784648484fc0dea6d686484edaec1c0617be5028f8f19", "sts-rak-boys-english@actvet.gov.ae": "39c5edc9ffa20824824f3e723983c130f1fce17c4b75060c5fd4b6832fb75e57", "sts-rak-boys-engineering@actvet.gov.ae": "1ef9c430525e075d6cbc80d4fde39249be279185150851c718ae974e31cf26b5", "sts-rak-boys-aviation@actvet.gov.ae": "723d62296cff6e50edd329f1bf6196923f9ae8e3bc31867165d0ec1298a86da6", "sts-rak-boys-aais@actvet.gov.ae": "07d275899bc45e002c69d0f805544649e9b2384bd8858a5f11ccc34749a2d2b6", "sts-rak-boys-math@actvet.gov.ae": "169d84846b29ea6163b456fdc5383a254b6023869619acc09ccb9d4d9bcb4fee", "sts-rak-boys-business@actvet.gov.ae": "a9bf333ce726ce1789d50972f6fda9bdab484de797ef65a91613e4967e271d27", "sts-rak-boys-ict@actvet.gov.ae": "21897ff4847156a3d26e351860e451b5f4b7718d0332b765a9ba1cc8c75db76e", "sts-rak-boys-pe@actvet.gov.ae": "0f9493657e670a4838635f2b372011ad21ee372d9b1cd87936ff322e3e0be5ec", "masalameen@gmail.com": "ff8a3dcf235c457fd3e1236b27d5e026337199ce84c08b416ecb26687dc59131", "ahmad.debek@actvet.gov.ae": "07435b9504727bc1ec9f81b7e396c051770952c82b45d7b5a444f99b641dc0d6", "tamer.ahmed@actvet.gov.ae": "81288e65080286a07cba27c5f5dd335008733351b28ab78282727536d6250e22", "waseem.alhausani@actvet.gov.ae": "9cc541b2490769975a4a38d13935d1f2f6b99b21670876198fea64463a7fc1d8", "abdullah.abbas@actvet.gov.ae": "0613c78770675ec0e076113b7c200287968fa1fbb88155fa97ab485f8df2d3f2", "abdalrahman.wahdan@actvet.gov.ae": "6f2c6ca910d4c715026677912000b855e6a25c71084f6535fd3245810a7f7033", "anjali.rajan@actvet.gov.ae": "9ab2fec450f5d23e61c0db200c83332b490e79bb4731a3208050fc6e81a04ba4"};
@@ -2225,8 +2245,10 @@ function subCtl(E){
  {let rr=0,mg=0;E.rows.forEach(r=>{if(!r.date||(f&&r.date<f)||(t&&r.date>t))return;if(r.act==='res')rr+=Math.max(1,+r.span||1);if(r.act==='merge')mg+=Math.max(1,+r.span||1)});ct.append(h('div','subDays','📚 Periods sent to the Resource Room: '+rr+'   ·   🔀 Periods merged with another section: '+mg))}
  if(SUBS.t){const m=M[SUBS.t];const dts=m?[...m.d].sort():[];ct.append(h('div','subDays',SUBS.t+' covered on: '+(dts.length?dts.join(' · '):'—')))}
  if(SUBOK)box.append(ct)}
+const SUBJN={ISL:'Islamic Studies',ARB:'Arabic',USM:'Social Studies',ENG:'English',MAT:'Mathematics',PHY:'Physics',CHM:'Chemistry',BIO:'Biology',CSC:'Computer Science',PHE:'Physical Education'};
+function subjOf(r){if(!r||!r.k||r.act)return '';const pf=(r.k.match(/^[A-Z]+/)||[''])[0],dp=PRE[pf];return (SUBJN[pf]||(dp&&DN[dp])||pf)+' · '+r.k}
 function drawSub(E){const tb=$('t_sub'),q=$('q_sub').value.trim().toLowerCase();tb.innerHTML='';subCtl(E);
- const hr=h('tr');['Date','Day','Absent teacher','Period','Substitute teacher','Class · Room','Status','Notes'].forEach(x=>hr.append(h('th','',x)));if(SUBOK)hr.append(h('th'));const th=h('thead');th.append(hr);tb.append(th);
+ const hr=h('tr');['Date','Day','Absent teacher','Period','Substitute teacher','Class · Room','Subject'].concat(SUBOK?['✓']:[],['Notes']).forEach(x=>{const t=h('th','',x);if(x==='✓')t.title='Conflict check (visible to the schedule editors only)';hr.append(t)});if(SUBOK)hr.append(h('th'));const th=h('thead');th.append(hr);tb.append(th);
  const body=h('tbody');let shown=0;
  const reset=r=>{if(r.per||r.subst||r.act){r.per=0;r.span=0;r.cls='';r.k='';r.room='';r.subst='';r.act='';r.merge=''}};
  E.rows.forEach((r,i)=>{if(!subVis(r))return;if(q&&!Object.values(r).join(' ').toLowerCase().includes(q)&&!(r.date&&DAYS[dayIdx(r.date)]||'').includes(q))return;shown++;
@@ -2240,7 +2262,8 @@ function drawSub(E){const tb=$('t_sub'),q=$('q_sub').value.trim().toLowerCase();
   x=td();const pb=h('button','pbtn'+(r.per?' set':''),r.per?'Period '+rng(r.per,spanOf(r)):'Choose period ▾');if(SUBOK)pb.onclick=()=>openSm(E,r);else pb.disabled=true;x.append(pb);
   x=td();const sb=h('button','pbtn'+(r.subst||r.act==='res'?' set':''),r.act==='res'?'📚 Resource Room':r.act==='merge'?'🔀 '+r.subst+' · merged with '+r.merge:(r.subst||'Choose substitute ▾'));if(SUBOK)sb.onclick=()=>openSm(E,r);else sb.disabled=true;x.append(sb);
   x=td();x.className='ro';x.textContent=[r.cls,r.room].filter(Boolean).join(' · ')||'—';
-  x=td();x.className='ro st '+(v?v.cls:'');x.textContent=r.act==='res'?'📚 Resource room':r.act==='merge'?'🔀 Merged':v?({ok:'✔ No conflict',warn:'⚠ Notice',bad:'⛔ Conflict'}[v.cls]):'—';if(v)x.title=v.msg;
+  x=td();x.className='ro subjC';x.textContent=subjOf(r)||'—';x.title='The subject the substitute teacher will teach';
+  if(SUBOK){x=td();x.className='ro st '+(v?v.cls:'');x.textContent=r.act==='res'?'📚':r.act==='merge'?'🔀':v?({ok:'✔',warn:'⚠',bad:'⛔'}[v.cls]):'—';x.title=(r.act==='res'?'Resource room':r.act==='merge'?'Merged':v?{ok:'No conflict',warn:'Notice',bad:'Conflict'}[v.cls]+' — '+v.msg:'No substitute chosen yet')}
   x=td();if(SUBOK){const el=h('input');el.type='text';el.value=r.note||'';el.oninput=()=>{r.note=el.value;E.mark()};x.append(el)}else x.textContent=r.note||'';
   if(SUBOK){const t2=td(),b=h('button','x','✕');b.title='Delete row';b.onclick=()=>{E.rows.splice(i,1);E.mark();E.draw()};t2.append(b)}
   body.append(tr)});
@@ -2379,6 +2402,74 @@ async function showHist(){const ov=el('div','pkOv'),bx=el('div','pkBx');bx.style
  all.forEach(x=>{const r=el('div','hrow');r.style.cssText='border-bottom:1px solid #e2e8f0;padding:6px 0;font-size:13px';r.append(el('b','',x.l),el('div','exs',fmtT(x.ts)+' · '+(x.by||'—')+' · '+x.st));bx.append(r)});
  const cl=btn('Close',()=>ov.remove(),'rd');bx.append(cl);document.body.append(ov)}
 document.addEventListener('keydown',e=>{if(!(e.ctrlKey||e.metaKey)||!canEd()||!ROOT.offsetParent)return;const t=e.target&&e.target.tagName;if(/INPUT|TEXTAREA|SELECT/.test(t)||(e.target&&e.target.isContentEditable))return;const k=(e.key||'').toLowerCase();if(k==='z'&&!e.shiftKey){e.preventDefault();hMove(-1)}else if(k==='y'||(k==='z'&&e.shiftKey)){e.preventDefault();hMove(1)}});
+
+/* ---- pop-up boards: invigilation schedule of a day / reserve list (v164) ---- */
+function reserveOf(d){const used=assignedSet(d),ctr=new Set(S.controllers.filter(Boolean)),sup=supSet(),res=[],una=[];
+ names.forEach(n=>{if(used.has(n))return;if(ctr.has(n))una.push([n,'general controller | مراقب عام']);else if(sup.has(n)&&!incl)una.push([n,'zone supervisor | مشرف منطقة']);else if(isRest(n,d))una.push([n,'rest day | يوم راحة']);else res.push(n)});return{res,una}}
+function openBoard(kind,did){const old=document.getElementById('bdOv');if(old)old.remove();
+ const ov=el('div','pkOv bdOv'),bx=el('div','pkBx bdBx');ov.id='bdOv';ov.append(bx);ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
+ const kd=e=>{if(e.key==='Escape'){e.stopPropagation();close()}},close=()=>{ov.remove();document.removeEventListener('keydown',kd,true)};document.addEventListener('keydown',kd,true);ov.onclick=e=>{if(e.target===ov)close()};
+ let cur=S.days.find(z=>z.id===did)||S.days[0];const sch=kind==='sch';const F={q:'',hall:'',zone:'',mine:false,dep:''};
+ const stt=t=>{const [a,b]=t;const n=Date.now(),s=Date.parse(cur.date+'T'+a+':00+04:00'),e2=Date.parse(cur.date+'T'+b+':00+04:00');if(isNaN(s)||isNaN(e2))return null;return n<s?['⏳ Starts in '+Math.max(1,Math.round((s-n)/6e4))+' min','wait']:n<e2?['🟢 In progress | جارٍ الآن','run']:['✔ Ended | انتهى','end']};
+ const meOf=n=>!!(window.__nameHit&&ROLE!=='student'&&window.__nameHit(n));
+ const lc2=x=>String(x||'').toLowerCase();
+ function paint(){bx.innerHTML='';if(!cur){bx.append(el('p','exs','No exam days yet.'));return}
+  const hd=el('div','pkH'),tt=el('h3','',sch?'📋 Invigilation schedule | جدول المراقبة':'🪑 Reserve invigilators | قائمة المراقبين الاحتياط');const x=btn('✕ Close | إغلاق',close,'rd');x.setAttribute('aria-label','Close');hd.append(tt,x);bx.append(hd);
+  const bar=el('div','bdDays');[...S.days].sort((a,b)=>(a.date||'').localeCompare(b.date||'')).forEach(z=>{const b=el('button','chip'+(z.id===cur.id?' on':''),(z.date?FMT(z.date):'No date')+(z.title?' · '+z.title:''));b.type='button';b.onclick=()=>{cur=z;F.hall='';F.zone='';paint()};bar.append(b)});bx.append(bar);
+  const pub=el('div','bdMeta');pub.append(el('span','',S.pubAt?'Last published | آخر نشر: '+fmtT(S.pubAt):'Not published yet | لم يُنشر بعد'));
+  if(canEd()&&(dirty||S.draft))pub.append(el('span','pcd dr','✏ Draft — includes changes not yet published | مسودة'));bx.append(pub);
+  const d=cur;
+  bx.append(el('div','bdDay',(d.date?FMT(d.date)+' · '+dnAr(d.date):'No date')+(d.title?' — '+d.title:'')));
+  const tools=el('div','bdTools'),q=el('input');q.type='search';q.className='pkQ bdQ';q.id='bdQ';q.placeholder=sch?'🔎 Search name, hall, class or subject… | ابحث':'🔎 Search by name… | ابحث بالاسم';q.value=F.q;tools.append(q);
+  const body=el('div','bdBody'),cnt=el('span','bdCnt');
+  const sel=(lab,opts,get,set)=>{const l=el('label','bdF',lab+' ');const s=el('select');opts.forEach(([v,t])=>{const o=el('option','',t);o.value=v;s.append(o)});s.value=get();s.onchange=()=>{set(s.value);fill()};l.append(s);return l};
+  let fill;
+  if(sch){
+   const R=remCfg(),halls=S.venues.filter(v=>(d.inv[v.id]||[]).length);
+   tools.append(sel('Hall | القاعة',[['','All halls']].concat(halls.map(v=>[v.id,v.name])),()=>F.hall,v=>F.hall=v));
+   const zs=S.zones.filter(z=>halls.some(v=>v.zone===z.id));if(zs.length>1)tools.append(sel('Zone | المنطقة',[['','All zones']].concat(zs.map(z=>[z.id,z.name])),()=>F.zone,v=>F.zone=v));
+   if(ROLE!=='student'&&window.__nameHit){const l=el('label','bdF'),c=el('input');c.type='checkbox';c.checked=F.mine;c.onchange=()=>{F.mine=c.checked;fill()};l.append(c,document.createTextNode(' Only my duties | مراقباتي فقط'));tools.append(l)}
+   tools.append(cnt);bx.append(tools,body);
+   const meta=[];if(d.type)meta.push('Type | النوع: '+tyL(d.type));if(S.controllers&&S.controllers.some(Boolean))meta.push('Controllers | المراقبون العامون: '+S.controllers.filter(Boolean).join(' · '));if(d.note)meta.push('📝 '+d.note);
+   fill=()=>{body.innerHTML='';F.q=q.value;const t=lc2(F.q.trim());
+    meta.forEach(m=>body.append(el('div','exs',m)));
+    let mine=[];halls.forEach(v=>(d.inv[v.id]||[]).forEach(n=>{if(meOf(n))mine.push(v)}));
+    if(ROLE!=='student'&&window.__nameHit){const m=el('div','bdMine '+(mine.length?'yes':'no'));m.textContent=mine.length?'✅ You have invigilation on this day | لديك مراقبة في هذا اليوم: '+mine.map(v=>{const [a,b]=vInt(d,v.id);return v.name+' ('+hm(a)+'–'+hm(b)+')'}).join(' · '):'You have no invigilation on this day | لا توجد لديك مراقبة في هذا اليوم';body.append(m)}
+    if(!halls.length){body.append(el('p','exs','No invigilators have been entered for this day yet. | لم تُدخل أسماء المراقبين لهذا اليوم بعد.'));cnt.textContent='';return}
+    const tb=el('table','bdT'),th=el('tr');['Hall | القاعة','Time | الوقت','Exam sessions | الاختبارات','Invigilators | المراقبون',''].forEach(z=>th.append(el('th','',z)));tb.append(th);let nh=0,ni=0;
+    S.zones.forEach(zn=>S.venues.filter(v=>v.zone===zn.id&&(d.inv[v.id]||[]).length).forEach(v=>{
+     if(F.hall&&v.id!==F.hall)return;if(F.zone&&zn.id!==F.zone)return;
+     const ss=d.sess.filter(z=>z.v===v.id),L=d.inv[v.id]||[];
+     const sTxt=s=>{const ce=catFind(s.code);return [s.cls,(s.code||'')+(ce&&ce.subject&&ce.subject!==s.code?' · '+ce.subject:''),tyL(tyOf(s,d)),s.n?s.n+' students':''].filter(Boolean).join(' — ')};
+     if(F.mine&&!L.some(meOf))return;
+     if(t){const hay=lc2([v.name,zn.name,L.join(' '),ss.map(sTxt).join(' ')].join(' '));if(!hay.includes(t))return}
+     nh++;ni+=L.length;const [a,b]=vInt(d,v.id),tr=el('tr');
+     const c1=el('td');c1.append(el('b','',v.name),el('small','',zn.name));tr.append(c1);
+     const c2=el('td');c2.append(el('b','',hm(a)+'–'+hm(b)));const s2=stt([hm(a),hm(b)]);if(s2)c2.append(el('span','bdSt '+s2[1],s2[0]));tr.append(c2);
+     const c3=el('td');ss.forEach(s=>{const ln=el('div','bdSs');ln.textContent=sTxt(s);c3.append(ln);const rq=catItems(catFind(s.code));if(rq.length)c3.append(el('small','','📎 '+rq.join(' · ')))});if(!ss.length)c3.append(el('small','','—'));tr.append(c3);
+     const c4=el('td');L.forEach(n=>{const hit=t&&lc2(n).includes(t);c4.append(el('span','pill'+(meOf(n)?' me':'')+(hit?' hit':''),NM(n)))});tr.append(c4);
+     const c5=el('td'),tb2=btn('⏱ Timer',()=>{close();try{window.__ETHALL&&window.__ETHALL(d.id,v.id);showView('etimer')}catch(e){}},'sm');c5.append(tb2);tr.append(c5);tb.append(tr)}));
+    cnt.textContent=nh+' hall(s) · '+ni+' invigilator(s) | قاعات: '+nh+' · مراقبون: '+ni;
+    if(!nh){body.append(el('p','exs','Nothing matches your filter. | لا توجد نتائج مطابقة.'));}else{const w=el('div','pcW bdW');w.append(tb);body.append(w)}
+    if(R.arrive!==''&&R.arrive!=null)body.append(el('div','pcN','⏰ Arrive '+R.arrive+' minutes before the start | الحضور قبل البدء بـ '+R.arrive+' دقيقة'));if(R.note)body.append(el('div','pcN','ℹ '+R.note))};
+  }else{
+   const {res,una}=reserveOf(d),deps=[...new Set(res.map(n=>gOf(TDEPT[n]||'na')))];
+   if(deps.length>1)tools.append(sel('Department | القسم',[['','All departments']].concat(GROUPS.filter(g=>g[0]&&deps.includes(g[0]))),()=>F.dep,v=>F.dep=v));
+   if(ROLE!=='student'&&window.__nameHit){const l=el('label','bdF'),c=el('input');c.type='checkbox';c.checked=F.mine;c.onchange=()=>{F.mine=c.checked;fill()};l.append(c,document.createTextNode(' Only me | أنا فقط'));tools.append(l)}
+   tools.append(cnt);bx.append(tools,body);
+   fill=()=>{body.innerHTML='';F.q=q.value;const t=lc2(F.q.trim());
+    body.append(el('div','exs','Not assigned on this day — available for replacement. They are not confirmed invigilators. | غير مكلّفين في هذا اليوم ومتاحون للاستبدال.'));
+    const list=res.filter(n=>(!t||lc2(n).includes(t))&&(!F.dep||gOf(TDEPT[n]||'na')===F.dep)&&(!F.mine||meOf(n)));
+    cnt.textContent=list.length+' / '+res.length+' | احتياط';
+    const lst=el('div','bdRes');list.forEach(n=>{const r=el('span','pill res'+(meOf(n)?' me':''),NM(n));const dp=DN[gOf(TDEPT[n]||'na')];if(dp)r.append(el('small','',' '+dp));lst.append(r)});
+    if(!list.length)lst.append(el('div','exs','No reserve teachers match. | لا يوجد مراقبون احتياط مطابقون.'));
+    body.append(el('h4','ctH','Reserve invigilators | قائمة المراقبين الاحتياط ('+list.length+')'),lst);
+    const ul=una.filter(([n])=>!t||lc2(n).includes(t));
+    if(ul.length){const dt=el('details','ctU');dt.append(el('summary','','Unavailable on this day ('+ul.length+') | غير متاحين'));ul.forEach(([n,w])=>dt.append(el('div','exs',NM(n)+' — '+w)));body.append(dt)}};
+  }
+  q.oninput=()=>fill();fill();
+ }
+ paint();document.body.append(ov);const qq=document.getElementById('bdQ');if(qq)qq.focus()}
 window.__HI=HI;
 /* ---- invigilation conflict engine, published copy, day control (v154) ---- */
 const AR_T='تنبيه: تعارض في جدول المراقبة',AR_B='هذا المدرس لديه مراقبة أخرى تتعارض مع الوقت المحدد. يرجى اختيار مراقب آخر أو تعديل موعد المراقبة.';
@@ -2494,8 +2585,8 @@ function draw(){
  const used=assignedSet(d),notOn=pool(d).filter(n=>!used.has(n));
  let conf=0,ovr=0;Object.values(A).forEach(x=>{if(x.c.length){if(x.ok)ovr++;else conf++}});
  const sy=ROOT.scrollTop;ROOT.innerHTML='';
- const top=el('div','exTop');const st=el('span','mode');st.id='exMsg';st.textContent=msg;top.append(st);top.append(el('span','exs','· build v154'));
- const sv=btn('💾 Save & publish',save,'');sv.id='exSave';sv.disabled=!dirty&&!window.__exPend&&!S.draft;if(dirty||window.__exPend||S.draft)sv.classList.add('dirty');top.append(edOnly(sv));{const ub=btn('↶ Undo | تراجع',()=>hMove(-1),'');ub.id='exUndo';const rb=btn('↷ Redo | إعادة',()=>hMove(1),'');rb.id='exRedo';const hb=btn('🕘 History | السجل',showHist,'');hb.id='exHist';top.append(edOnly(ub),edOnly(rb),edOnly(hb))}{const jp=(t,k,c)=>edOnly(btn(t,()=>{vm='cards';CB.open=true;RS.open=true;draw();setTimeout(()=>{const x=ROOT.querySelector(c);if(x){x.open=true;x.scrollIntoView({behavior:'smooth',block:'start'})}},80)},'go'));top.append(jp('📚 Final exams catalogue','cat','.exCat'),jp('🧑‍🏫 Invigilator roster','ros','.exRoster'))}{const bt=el('button','bigTimer');bt.type='button';bt.innerHTML='<span>⏱</span><b>Electronic Timer</b><small>Open the full-screen exam clock</small>';bt.onclick=()=>{window.__ETHALL&&window.__ETHALL(d.id,'');showView('etimer')};top.append(bt)}{const sp=el('span','exs exStat');sp.id='exStat';top.append(sp)}ROOT.append(top);stUpd();undoUpd();if(canEd()&&REJ.list.length)ROOT.append(rejCard());if(!canEd())ROOT.append(teacherCard());ROOT.append(pubCard(d));if(canEd())ROOT.append(ctlCard(d));if(!canEd()&&!S.pubAt){ROOT.scrollTop=sy;return}{const bt=badTimes();if(bt.length&&canEd()){const w=el('div','exs');w.id='exBad';w.style.cssText='background:#fee2e2;color:#991b1b;border-radius:10px;padding:8px 12px;margin:6px 0;font-weight:600';w.textContent='⚠ '+bt.slice(0,3).join(' · ')+(bt.length>3?' · +'+(bt.length-3)+' more':'')+' — your changes are kept; fix the time to save.';ROOT.append(w)}}if(vm===null||!canEd())vm='table';
+ const top=el('div','exTop');const st=el('span','mode');st.id='exMsg';st.textContent=msg;top.append(st);top.append(el('span','exs','· build v164'));
+ const sv=btn('💾 Save & publish',save,'');sv.id='exSave';sv.disabled=!dirty&&!window.__exPend&&!S.draft;if(dirty||window.__exPend||S.draft)sv.classList.add('dirty');top.append(edOnly(sv));{const ub=btn('↶ Undo | تراجع',()=>hMove(-1),'');ub.id='exUndo';const rb=btn('↷ Redo | إعادة',()=>hMove(1),'');rb.id='exRedo';const hb=btn('🕘 History | السجل',showHist,'');hb.id='exHist';top.append(edOnly(ub),edOnly(rb),edOnly(hb))}{const jp=(t,k,c)=>edOnly(btn(t,()=>{vm='cards';CB.open=true;RS.open=true;draw();setTimeout(()=>{const x=ROOT.querySelector(c);if(x){x.open=true;x.scrollIntoView({behavior:'smooth',block:'start'})}},80)},'go'));top.append(jp('📚 Final exams catalogue','cat','.exCat'),jp('🧑‍🏫 Invigilator roster','ros','.exRoster'))}{const mkb=(ic,en,ar,k)=>{const b=el('button','bdBtn');b.type='button';b.innerHTML='<span>'+ic+'</span><b>'+en+'</b><small>'+ar+'</small>';b.onclick=()=>openBoard(k,d.id);return b};window.__bdG=el('div','bdGrp');window.__bdG.append(mkb('📋','Invigilation schedule','جدول المراقبة لهذا اليوم','sch'),mkb('🪑','Reserve list','قائمة الاحتياط','res'))}{const bt=el('button','bigTimer');bt.type='button';bt.innerHTML='<span>⏱</span><b>Electronic Timer</b><small>Open the full-screen exam clock</small>';bt.onclick=()=>{window.__ETHALL&&window.__ETHALL(d.id,'');showView('etimer')};window.__bdG.append(bt);top.append(window.__bdG)}{const sp=el('span','exs exStat');sp.id='exStat';top.append(sp)}ROOT.append(top);stUpd();undoUpd();if(canEd()&&REJ.list.length)ROOT.append(rejCard());if(!canEd())ROOT.append(teacherCard());ROOT.append(pubCard(d));if(canEd()){const cd=el('details','ctlD'),sm=el('summary','','🧮 Day control — required, confirmed & reserve | العدد المطلوب والمعتمدون والاحتياط');cd.open=!!BK.ctlOpen;cd.ontoggle=()=>{BK.ctlOpen=cd.open};cd.append(sm,ctlCard(d));ROOT.append(cd)};if(!canEd()&&!S.pubAt){ROOT.scrollTop=sy;return}{const bt=badTimes();if(bt.length&&canEd()){const w=el('div','exs');w.id='exBad';w.style.cssText='background:#fee2e2;color:#991b1b;border-radius:10px;padding:8px 12px;margin:6px 0;font-weight:600';w.textContent='⚠ '+bt.slice(0,3).join(' · ')+(bt.length>3?' · +'+(bt.length-3)+' more':'')+' — your changes are kept; fix the time to save.';ROOT.append(w)}}if(vm===null||!canEd())vm='table';
  /* days */
  const dc=el('section','card exc');dc.append(el('h3','exh','📅 Exam days — choose the day'));
  const bar=el('div','exDays');const chw=el('div');chw.style.cssText='display:flex;flex-wrap:wrap;gap:6px;max-height:124px;overflow:auto;width:100%;padding:2px';bar.append(chw);const sorted=[...S.days].sort((a,b)=>(a.date||'~').localeCompare(b.date||'~'));const __td=todayDubai();let __past=0;sorted.forEach(x=>{if(x.date&&x.date<__td&&x.id!==d.id&&!BK.past){__past++;return}const b=el('button','chip dayChip'+(x.id===d.id?' on':''),(x.date?new Date(x.date+'T12:00:00+04:00').toLocaleDateString('en-GB',{timeZone:'Asia/Dubai',weekday:'short',day:'numeric',month:'short'}):'No date'));b.onclick=()=>{dayId=x.id;pick='';draw()};if(canEd()&&S.days.length>1){const cx=el('span','chX','✕');cx.title='Delete this day';cx.onclick=e=>{e.stopPropagation();if(!confirm('Delete '+(x.title||'this day')+' ('+(x.date||'no date')+') with all its halls and invigilators?'))return;S.days=S.days.filter(z=>z.id!==x.id);if(dayId===x.id)dayId=S.days[0].id;mark();draw();save()};b.append(cx)}chw.append(b)});if(__past){const pb=btn('🕘 Past days ('+__past+')',()=>{BK.past=true;draw()},'sm');pb.title='Show the days that have already passed';chw.append(pb)}else if(BK.past&&sorted.some(x=>x.date&&x.date<__td)){const pb=btn('Hide past days',()=>{BK.past=false;draw()},'sm');chw.append(pb)}setTimeout(()=>{const a=chw.querySelector('.on');if(a&&a.scrollIntoView)a.scrollIntoView({block:'nearest',inline:'nearest'})},0);
@@ -2812,8 +2903,8 @@ function examDiff(prevKeys,prevSig,cur,sigOf){const P={},C={},put=(M,n,did,sg)=>
  const out=[];new Set([...Object.keys(P),...Object.keys(C)]).forEach(n=>{const types=new Set(),lines=[];new Set([...Object.keys(P[n]||{}),...Object.keys(C[n]||{})]).forEach(did=>{const ps=(P[n]||{})[did]||[],cs=(C[n]||{})[did]||[],a=[...ps].sort().join('#'),b=[...cs].sort().join('#');
   if(!ps.length&&cs.length){types.add('add');cs.forEach(g=>lines.push('➕ '+sigLine(g)))}else if(ps.length&&!cs.length){types.add('rem');ps.forEach(g=>lines.push('✖ '+(sigLine(g)||'previous assignment')))}else if(a!==b){types.add('chg');cs.forEach(g=>lines.push('✎ '+sigLine(g)))}});
   if(types.size)out.push({n,kind:types.size===1&&types.has('add')?'assign':types.size===1&&types.has('rem')?'cancel':'change',lines})});return out}
-async function sendExamNotes(diff){if(!EDB||!diff||!diff.length)return 0;const al=diff.map(x=>mkNote(x.kind,'exam',[x.n],x.lines));
- const cur=await EDB.doc('coord/alerts').get();const old=cur.exists&&Array.isArray(cur.data().list)?cur.data().list:[];await EDB.doc('coord/alerts').set({list:[...old,...al].slice(-300)});return al.length}
+async function sendExamNotes(diff){if(!EDB||!diff||!diff.length)return 0;const al0=diff.map(x=>mkNote(x.kind,'exam',[x.n],x.lines));
+ const cur=await EDB.doc('coord/alerts').get();const old=cur.exists&&Array.isArray(cur.data().list)?cur.data().list:[];const al=dedupeNotes(old,al0);if(!al.length)return 0;await EDB.doc('coord/alerts').set({list:[...old,...al].slice(-300)});return al.length}
 async function sendExamAlerts(fresh){if(!EDB||!fresh.length)return 0;const G={};fresh.forEach(f=>{const k=f.n+'|'+f.d.id;(G[k]||(G[k]={n:f.n,d:f.d,h:[]})).h.push(f.v)});
  const al=Object.values(G).map(g=>({id:newId(),ts:Date.now(),names:[g.n],text:'📝 Exam invigilation: you are assigned on '+((g.d.date&&['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][new Date(g.d.date+'T12:00:00Z').getUTCDay()])||'')+' '+(g.d.date||'')+' · '+g.h.map(v=>{const[a,b]=vInt(g.d,v.id);return v.name+' ('+hm(a)+'–'+hm(b)+')'}).join(' + ')+(g.d.title?' — '+g.d.title:'')+'.'}));
  const cur=await EDB.doc('coord/alerts').get();const old=cur.exists&&Array.isArray(cur.data().list)?cur.data().list:[];await EDB.doc('coord/alerts').set({list:[...old,...al].slice(-200)});return al.length}
@@ -2899,7 +2990,7 @@ function teacherCard(){
   if(rc.arrive!==''&&!isNaN(+rc.arrive)&&a.from){const m=T2M(a.from)-(+rc.arrive);if(m>=0)kv('Arrive by | الحضور قبل',hm(m)+' ('+rc.arrive+' min before the start | قبل البدء بـ '+rc.arrive+' دقيقة)')}
   kv('Instructions | تعليمات',[rc.note,...(a.reqs||[])].filter(Boolean));
   if(up){const start=ms(a.date,a.from),dh=(start-now)/36e5;if(dh<=+rc.lead&&dh>-3){const w=dh<1?'in less than an hour | خلال أقل من ساعة':'in about '+Math.round(dh)+' hour(s) | خلال نحو '+Math.round(dh)+' ساعة';const rm=el('div','trem','⏰ Reminder | تذكير: your invigilation starts '+w+' — '+a.from+' · '+a.hall);it.insertBefore(rm,hd.nextSibling);
-   const k='tt_rem_'+a.date+'|'+a.from+'|'+a.hall;try{if(!localStorage.getItem(k)){localStorage.setItem(k,'1');setTimeout(()=>{try{window.__smallNote(['⏰ Reminder | تذكير: invigilation '+FMT(a.date)+' '+a.from+'–'+a.to+' · '+a.hall])}catch(e){}},700)}}catch(e){}}}
+   const k='tt_rem_'+a.date+'|'+a.from+'|'+a.hall;try{if(!localStorage.getItem(k)){localStorage.setItem(k,'1');0}}catch(e){}}}
   c.append(it)});
  return c}
 setInterval(()=>{if(!canEd()&&ROLE!=='student'&&ROOT.offsetParent&&loaded)draw()},300000);
@@ -2949,7 +3040,7 @@ function syncFlags(P){const F=[],RG=new Map();P.resched.forEach(x=>{const k=(x.r
  P.unmatched.forEach(x=>F.push({id:flagId('unmatched','r'+x.r.n),type:'Unmatched',text:'Row '+x.r.n+': '+(rl(x.r)||'(empty)')+' — '+x.why}));
  P.added.forEach(x=>F.push({id:flagId('added',x.r.id||x.r.code||x.r.subject),type:'New exam',text:rl(x.r)+' — added to the catalogue. Place it on a day and hall and assign invigilators (nothing is assigned automatically).'}));
  return F}
-async function adminNote(lines){if(!EDB)return;try{const cur=await EDB.doc('coord/alerts').get(),old=cur.exists&&Array.isArray(cur.data().list)?cur.data().list:[],n=mkNote('sync','exam',[],lines);n.admin=true;await EDB.doc('coord/alerts').set({list:[...old,n].slice(-300)})}catch(e){}}
+async function adminNote(lines){if(!EDB)return;try{const cur=await EDB.doc('coord/alerts').get(),old=cur.exists&&Array.isArray(cur.data().list)?cur.data().list:[],n=mkNote('sync','exam',[],lines);n.admin=true;if(!dedupeNotes(old,[n]).length)return;await EDB.doc('coord/alerts').set({list:[...old,n].slice(-300)})}catch(e){}}
 async function syncApply(){const P=SY.plan;if(!P||!canEd())return;
  let cat=[...(S.cat||[])];P.added.forEach(x=>{const r=x.r;cat.push({id:uid(),tid:r.id||'',code:r.code,subject:r.subject||r.name,name:r.name,date:r.date,dur:r.dur||'',type:'',reqs:[],notes:r.notes,cls:r.cls,src:'sync'})});
  P.mod.forEach(x=>{cat=cat.map(e=>e.id===x.ce.id?{...e,...x.cp,src:e.src||'sync'}:e)});S.cat=cat;
@@ -3207,6 +3298,7 @@ function tdraw(){
   ss.forEach(s=>{const tr=el('tr'),ce=catFind(s.code);[s.cls,(s.code||'—')+(ce&&ce.subject&&lc(ce.subject)!==lc(s.code)?' · '+ce.subject:''),(s.ty||d.type||'Paper')==='Electronic'?'💻 Electronic':'📄 Paper',s.n||'—',catItems(ce).join(' · ')||'—'].forEach(x=>tr.append(el('td','',String(x))));tb.append(tr)});r.append(tb)}
  if(ET.mode==='manual'&&(M.cls||M.code)){const tb=el('table','etTb');const th=el('tr');['Class / section','Subject','Exam type','Students'].forEach(x=>th.append(el('th','',x)));tb.append(th);const tr=el('tr');[M.cls||'—',M.code||'—',M.type==='Electronic'?'💻 Electronic':'📄 Paper',M.n||'—'].forEach(x=>tr.append(el('td','',String(x))));tb.append(tr);r.append(tb)}
  {const nt=ET.mode==='manual'?M.note:d.note;if(nt)r.append(el('div','etNote','📝 '+nt))}
+ if(ET.mode!=='manual'&&v){const L=(d.inv&&d.inv[v.id])||[],ct=(S.controllers||[]).filter(Boolean),ib=el('div','etInv');ib.append(el('small','','👥 Invigilators in '+v.name+' | المراقبون'),el('b','',L.length?L.join(' · '):'—'));if(ct.length)ib.append(el('small','etCt','General controllers | المراقبون العامون: '+ct.join(' · ')));r.append(ib)}
  const ctl=el('div','etCtl');
  const fs=btn(ET.full?'✕ Exit full screen':'⛶ Full screen',()=>{ET.full=!ET.full;r.classList.toggle('etFull',ET.full);fs.textContent=ET.full?'✕ Exit full screen':'⛶ Full screen';try{if(ET.full&&r.requestFullscreen)r.requestFullscreen().catch(()=>{});else if(!ET.full&&document.fullscreenElement)document.exitFullscreen()}catch(e){}},'primary');ctl.append(fs);
  const pr=btn(ET.prac?'■ Stop practice':'▶ Practice run (starts now)',()=>{ET.prac=ET.prac?0:Date.now();ET.fired={};tdraw()});ctl.append(pr);
@@ -3381,7 +3473,7 @@ function wireAv(){const b=$('avb');if(!b)return;const n=F.t;
  const nameHit0=n=>{if(!MS.me)return false;const a=nrm(n),m=nrm(MS.me.name),e=nrm(MS.me.email),r=MS.roster.find(x=>nrm(x.email)&&nrm(x.email)===e);const cands=[m,r&&nrm(r.name)].filter(Boolean);return cands.some(c=>c&&a&&(c===a||(Math.min(c.length,a.length)>4&&(c.includes(a)||a.includes(c)))))};
  const fzHit=n=>{const em=((MS.me&&MS.me.email)||TMAIL||'').toLowerCase();if(!em||!n)return false;if(LEAD[n]&&LEAD[n].e&&LEAD[n].e.toLowerCase()===em)return true;const tk=em.split('@')[0].split(/[^a-z]+/).filter(t=>t.length>2),w=n.toLowerCase().split(/[^a-z]+/).filter(Boolean);const k=tk.filter(t=>w.includes(t)).length;return tk.length>1?k>=2:k===1};
  const nameHit=n=>nameHit0(n)||fzHit(n);window.__nameHit=nameHit;
- function banner(un){const bn=$('subBn');if(!bn)return;if(!un||ROLE==='student'){bn.classList.remove('on');return}
+ function banner(un){const bn=$('subBn');if(!bn)return;bn.classList.remove('on');return;if(!un||ROLE==='student'){bn.classList.remove('on');return}
   const td=todayDubai(),mine=rowsNow.filter(r=>r.subst&&r.per&&r.date&&r.date>=td&&nameHit(r.subst));
   const det=r=>(DAYS[dayIdx(r.date)]||'')+' '+r.date+' · Period '+rng(r.per,spanOf(r))+(r.cls?' · '+r.cls:'')+(r.room?' · Room '+r.room:'')+' · covering '+r.absent;
   bn.innerHTML='🔔 A substitution schedule has been posted for absent teachers <u>Open ▸</u>'+(mine.length?'<small>📌 You are assigned: '+mine.slice(0,4).map(det).join(' | ')+(mine.length>4?' …':'')+'</small>':'');
@@ -3419,9 +3511,10 @@ function wireAv(){const b=$('avb');if(!b)return;const n=F.t;
    {const seen=new Set();fresh.forEach(r=>{const k=r.absent+'|'+r.date;if(seen.has(k))return;seen.add(k);const g=gOf(TDEPT[r.absent]||'na'),ls=Object.keys(LEAD).filter(n=>n!==r.absent&&gOf(LEAD[n].d)===g&&!M[n]);if(!ls.length)return;const rr=rows.filter(x=>x.absent===r.absent&&x.date===r.date&&x.per),un=rr.filter(x=>!x.subst&&!x.act).length;al.push(mkNote('occ','sub',ls,['🚩 Absence in your department: '+r.absent+' on '+(DAYS[dayIdx(r.date)]||'')+' '+r.date+' — '+(rr.length||'no')+' period(s)'+(rr.length?', '+un+' not yet covered':'')]))})}
    const nm0=[...new Set(al.flatMap(a=>a.names))];if(!nm0.length){E.msg('✔ Saved');return}E.msg('✔ Saved — waiting for your confirmation before notifying');
    if(!(await window.__askNotify(nm0,'الإشغال'))){save.subSeen=Date.now()+1;persist();E.msg('✔ Saved — no notification was sent (your choice)');return}
-   await db.doc('coord/alerts').set({list:[...old2,...al].slice(-300)});
+   const al2=dedupeNotes(old2,al);if(!al2.length){save.subSeen=Date.now()+1;persist();E.msg('✔ Saved — the same notification was already sent, so nothing was repeated');return}
+   await db.doc('coord/alerts').set({list:[...old2,...al2].slice(-300)});
    save.subSeen=Date.now()+1;persist();
-   E.msg('✔ Saved — notification sent to: '+[...new Set(al.flatMap(a=>a.names))].join(', '))}catch(e){E.msg('Saved, but the notification could not be sent')}
+   E.msg('✔ Saved — notification sent to: '+[...new Set(al2.flatMap(a=>a.names))].join(', '))}catch(e){E.msg('Saved, but the notification could not be sent')}
  };
 })();
 
@@ -3438,7 +3531,7 @@ function wireAv(){const b=$('avb');if(!b)return;const n=F.t;
   e0.msg('✔ Saved — waiting for your confirmation before notifying');
   if(!(await window.__askNotify(nm,'الإذاعة الصباحية'))){e0.msg('✔ Saved — no notification was sent (your choice)');return}
   try{const cur=await EDB.doc('coord/alerts').get(),o=cur.exists&&Array.isArray(cur.data().list)?cur.data().list:[];
-   await EDB.doc('coord/alerts').set({list:[...o,...nm.map(n=>mkNote('radio','radio',[n],M[n]))].slice(-300)});e0.msg('✔ Saved — notification sent to: '+nm.join(', '))}catch(x){e0.msg('Saved, but the notification could not be sent')}}
+   const al3=dedupeNotes(o,nm.map(n=>mkNote('radio','radio',[n],M[n])));if(!al3.length){e0.msg('✔ Saved — the same notification was already sent, so nothing was repeated');return}await EDB.doc('coord/alerts').set({list:[...o,...al3].slice(-300)});e0.msg('✔ Saved — notification sent to: '+al3.flatMap(a=>a.names).join(', '))}catch(x){e0.msg('Saved, but the notification could not be sent')}}
 })();
 
 /* ===== DEPARTMENT MEETING ===== */
@@ -4360,7 +4453,7 @@ drawSub=function(E){_drawSub0(E);const box=$('subCtl');if(!box)return;
 })();
 /* gold duty mail */
 const fab=h('div');fab.id='mailFab';fab.innerHTML='<span class="ic">✉️<span class="bd" id="mfN">0</span></span><span id="mfT"></span>';document.body.append(fab);
-function fabUpd(clicked){if(ROLE==='student'){fab.classList.remove('on');return}
+function fabUpd(clicked){fab.classList.remove('on','bl');return;if(ROLE==='student'){fab.classList.remove('on');return}
  const du=myDuties(),ex=window.__exMine?window.__exMine():[],la=(du.length||ex.length)?[]:myLeadAbs(),n=du.length+ex.length||la.length;
  if(!n){fab.classList.remove('on','bl');return}
  const sig=JSON.stringify([du.map(r=>[r.date,r.per,r.subst]),ex.map(r=>[r.date,r.hall]),la.map(r=>[r.date,r.absent,r.per,r.subst])]);
@@ -4856,7 +4949,10 @@ window.__aiJson=aiJson;
  .nE{text-align:center;padding:22px;opacity:.7}
  @media(max-width:700px){#nPan{top:60px}}`;document.head.append(st);
  const me=()=>((typeof MS!=='undefined'&&MS.me&&MS.me.email)||TMAIL||'anon').toLowerCase(),SK=()=>'tt_nr_'+me();
- const load=()=>{try{return JSON.parse(localStorage.getItem(SK())||'null')||{}}catch(e){return{}}},put=o=>{try{localStorage.setItem(SK(),JSON.stringify(o))}catch(e){}};
+ let UID=null,upT=0,mdb=null;
+ const load=()=>{try{return JSON.parse(localStorage.getItem(SK())||'null')||{}}catch(e){return{}}},put=o=>{try{localStorage.setItem(SK(),JSON.stringify(o))}catch(e){}clearTimeout(upT);upT=setTimeout(syncUp,800)};
+ function syncUp(){if(!mdb||!UID)return;try{const S=load(),ids=new Set(ALL.map(a=>a.id)),pr=m=>{const o={};Object.keys(m||{}).forEach(k=>{if(ids.has(k)||!ALL.length)o[k]=1});return o};mdb.doc('inbox/'+UID).set({read:pr(S.read),del:pr(S.del),upd:Date.now()}).catch(()=>{})}catch(e){}}
+ function mergeDown(d){try{if(!d)return;const S=load();let ch=false;['read','del'].forEach(k=>{const m=d[k]||{};S[k]=S[k]||{};Object.keys(m).forEach(i=>{if(!S[k][i]){S[k][i]=1;ch=true}})});if(ch){try{localStorage.setItem(SK(),JSON.stringify(S))}catch(e){}badge()}}catch(e){}}
  let ALL=[],db=null,first=true,toasted=new Set(),onlyUn=false;
  const mineL=()=>{const S=load();return ALL.filter(a=>!(S.del&&S.del[a.id])).sort((x,y)=>y.ts-x.ts)};
  const isUn=a=>{const S=load();return !(S.read&&S.read[a.id])};
@@ -4870,7 +4966,7 @@ window.__aiJson=aiJson;
  function draw(){const L=mineL(),un=L.filter(isUn),list=onlyUn?un:L;pan.innerHTML='';
   const hd=document.createElement('div');hd.className='nh';hd.innerHTML='<h3>🔔 Notifications | الإشعارات</h3><span class="sp"></span>';
   const mk=(t,f,c)=>{const b=document.createElement('button');b.type='button';b.className='btn '+(c||'sm');b.textContent=t;b.onclick=f;return b};
-  hd.append(mk(onlyUn?'Show all | الكل':'Unread only | غير المقروء',()=>{onlyUn=!onlyUn;draw()}),mk('Mark all read | تعليم الكل',()=>{const S=load();S.read=S.read||{};L.forEach(a=>S.read[a.id]=1);put(S);badge()}),mk('✕',()=>pan.classList.remove('on'),'rd sm'));pan.append(hd);
+  hd.append(mk(onlyUn?'Show all | الكل':'Unread only | غير المقروء',()=>{onlyUn=!onlyUn;draw()}),mk('Mark all read | تعليم الكل',()=>{const S=load();S.read=S.read||{};L.forEach(a=>S.read[a.id]=1);put(S);badge()}),mk('✕',()=>closeP(),'rd sm'));pan.append(hd);
   if(!list.length){const e=document.createElement('div');e.className='nE';e.innerHTML=onlyUn?'You have no unread notifications.<br>لا توجد إشعارات غير مقروءة.':'No notifications yet.<br>لا توجد إشعارات بعد.';pan.append(e)}
   list.forEach(a=>{const d=document.createElement('div');d.className='nI'+(isUn(a)?' un':'');
    const t=document.createElement('b');t.className='t';t.textContent=(isUn(a)?'● ':'')+(a.title||'Notification | إشعار');d.append(t);
@@ -4879,15 +4975,18 @@ window.__aiJson=aiJson;
    const p1=document.createElement('p');p1.textContent=a.text;d.append(p1);if(a.ar){const p2=document.createElement('p');p2.className='ar';p2.textContent=a.ar;d.append(p2)}
    const ac=document.createElement('div');ac.className='ac';
    ac.append(mk('Open schedule | فتح الجدول',()=>{mark(a.id,1);pan.classList.remove('on');try{showView(a.view||(a.sched==='sub'?'sub':'exam'))}catch(e){}},'go sm'),mk(isUn(a)?'Mark read | مقروء':'Mark unread | غير مقروء',()=>{mark(a.id,!isUn(a)?false:true);draw()}),mk('Delete | حذف',()=>{const S=load();S.del=S.del||{};S.del[a.id]=1;put(S);badge();draw()},'rd sm'));d.append(ac);pan.append(d)})}
- w.onclick=e=>{e.stopPropagation();pan.classList.toggle('on');if(pan.classList.contains('on'))draw()};
- document.addEventListener('click',e=>{if(pan.classList.contains('on')&&e.target.isConnected&&!pan.contains(e.target)&&e.target!==w)pan.classList.remove('on')});
+ /* once the person has opened the bell and seen the notifications, they count as read and never come back as new (on every device) */
+ function closeP(){if(!pan.classList.contains('on'))return;pan.classList.remove('on');const S=load();S.read=S.read||{};let ch=false;mineL().forEach(a=>{if(!S.read[a.id]){S.read[a.id]=1;ch=true}});if(ch){put(S);badge()}}
+ w.onclick=e=>{e.stopPropagation();if(pan.classList.contains('on'))closeP();else{pan.classList.add('on');draw()}};
+ document.addEventListener('click',e=>{if(pan.classList.contains('on')&&e.target.isConnected&&!pan.contains(e.target)&&e.target!==w)closeP()});
  function toast(n){let b=document.getElementById('smNote');if(!b){b=document.createElement('div');b.id='smNote';document.body.append(b)}const d=document.createElement('div');d.className='smN';const tx=document.createElement('span');tx.textContent='🔔 You have '+n+' new notification'+(n>1?'s':'')+' | لديك '+n+' إشعار'+(n>1?'ات':'')+' جديد'+(n>1?'ة':'');tx.onclick=()=>{d.remove();pan.classList.add('on');draw()};const x=document.createElement('button');x.type='button';x.textContent='✕';x.onclick=e=>{e.stopPropagation();d.remove()};d.append(tx,x);b.append(d);setTimeout(()=>d.remove(),15000)}
  function ingest(list){const mine=list.filter(a=>(a.names||[]).some(n=>window.__nameHit&&window.__nameHit(n))||(a.admin&&isAuth8()));ALL=mine;const S=load();
   if(!S.base){S.base=Date.now();S.read=S.read||{};mine.forEach(a=>S.read[a.id]=1);put(S)}
-  const fresh=mineL().filter(a=>isUn(a)&&!toasted.has(a.id));fresh.forEach(a=>toasted.add(a.id));badge();if(fresh.length)toast(fresh.length)}
+  const fresh=mineL().filter(a=>isUn(a)&&!toasted.has(a.id));fresh.forEach(a=>toasted.add(a.id));badge();/* no pop-up: new notifications are shown only inside the bell panel */}
  async function init(){let ok=place();if(!ok)setTimeout(init,500);if(!ok)return;
   try{if(window.claude&&claude.use)db=await claude.use('db')}catch(e){}
-  if(!db)return;db.doc('coord/alerts').onSnapshot(s=>{const l=s.exists&&Array.isArray(s.data().list)?s.data().list.map(a=>({...a})):[];ingest(l)},()=>{})}
+  if(!db)return;mdb=db;try{const U=await claude.use('user');UID=U&&U.id?await U.id():null;if(UID)db.doc('inbox/'+UID).onSnapshot(s=>{if(s.exists)mergeDown(s.data())},()=>{})}catch(e){}
+  db.doc('coord/alerts').onSnapshot(s=>{const l=s.exists&&Array.isArray(s.data().list)?s.data().list.map(a=>({...a})):[];ingest(l)},()=>{})}
  window.__notifMine=()=>mineL();
  window.__notifState=()=>({total:mineL().length,unread:mineL().filter(isUn).length,ids:mineL().map(a=>a.id)});
  setTimeout(init,1800);setTimeout(place,5000);
